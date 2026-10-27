@@ -29,11 +29,12 @@
 
   <h2>What we collect</h2>
   <ul>
-    <li><strong>Phone number.</strong> You verify it once, by a one-time code sent by SMS. We do not store the number. We store a keyed one-way hash of it that ties it to your handle, so a new phone or a reinstall gets the same handle back and nobody else can take it. The number passes through our server's memory and our SMS provider (Twilio) while the code is checked.</li>
+    <li><strong>Phone number.</strong> You sign in with your phone number and a one-time code sent by SMS. The number is stored by our sign-in provider (Supabase) as your account identifier, and the SMS is sent through Twilio. It ties your account to your handle, so a new phone or a reinstall gets the same handle back and nobody else can take it. Our messaging server never receives your number. Other people never see it: they find you only by your handle.</li>
     <li><strong>Handle and display name.</strong> The name you choose is stored in our directory so people can find and recognise you. Your handle is what other people see; your phone number is not.</li>
+    <li><strong>Account and session data.</strong> An internal account ID, your sign-in session, and a hash of a random messaging token your device creates, which links your devices to your account.</li>
     <li><strong>Device keys.</strong> Public cryptographic keys for your device, so others can start encrypted chats with you. Private keys never leave your iPhone.</li>
     <li><strong>Encrypted messages in transit.</strong> To deliver a message to a recipient who is offline, our server temporarily holds an encrypted envelope. It cannot read it, and it is deleted once the recipient's device acknowledges it, or after 30 days at most. Encrypted voice notes and other media are stored the same way (up to 30 days).</li>
-    <li><strong>Notification token.</strong> If you allow notifications, Apple's push token for your device, used only to wake the app to fetch new messages. Push payloads contain no message content.</li>
+    <li><strong>Notification token.</strong> If you allow notifications, Apple's push token for your device, stored against your account and used only to wake the app to fetch new messages. Push payloads contain no message content.</li>
     <li><strong>Technical logs.</strong> Our servers log requests (for example time, status and a shortened device identifier) for security and debugging. Logs never contain message content or full phone numbers.</li>
   </ul>
 
@@ -45,17 +46,18 @@
 
   <h2>Who we share data with</h2>
   <ul>
-    <li><strong>Twilio</strong>, to send and check the SMS verification code.</li>
+    <li><strong>Supabase</strong>, which runs sign-in and stores account data (phone number, account ID, push token) and our database.</li>
+    <li><strong>Twilio</strong>, to send the SMS verification code.</li>
     <li><strong>Amazon Web Services</strong>, which hosts our servers.</li>
     <li><strong>Apple</strong>, to deliver push notifications.</li>
     <li><strong>An AI model provider and a sandbox provider</strong>, only if you use Senv Agent.</li>
   </ul>
-  <p>We do not sell personal data. We may disclose data if the law requires it, but we can only hand over what we have: public keys, handle, display name, a hashed phone number and any encrypted envelopes not yet delivered.</p>
+  <p>We do not sell personal data. We may disclose data if the law requires it, but we can only hand over what we have: public keys, handle, display name, phone number and account ID, push token, and any encrypted envelopes not yet delivered.</p>
 
   <h2>How long we keep it</h2>
   <ul>
     <li>Encrypted messages and media in transit: until delivered, 30 days at most.</li>
-    <li>Handle, display name, device keys and hashed phone number: until you delete your account.</li>
+    <li>Phone number, account ID, handle, display name, device keys and push token: until you delete your account.</li>
     <li>Agent conversations: until you delete them.</li>
     <li>Server logs: kept for a short period for security and debugging.</li>
   </ul>
@@ -70,7 +72,7 @@
   <p>Senv is not directed at children under 16, and we do not knowingly collect their data. If you think a child has signed up, tell us and we will delete the account.</p>
 
   <h2>International transfers</h2>
-  <p>Our servers run on AWS in the European Union. Some providers (for example Twilio and the agent providers) may process data outside the EU under standard contractual clauses or equivalent safeguards.</p>
+  <p>Our servers run on AWS in the European Union. Some providers (for example Supabase, Twilio and the agent providers) may process data outside the EU under standard contractual clauses or equivalent safeguards.</p>
 
   <h2>Changes</h2>
   <p>If we change this policy in a way that matters, we will update the date above and tell you in the app.</p>
