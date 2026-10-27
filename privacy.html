@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senv privacy policy</title>
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <header><div class="mark">S</div><a href="/">Senv</a></header>
+
+  <h1>Privacy policy</h1>
+  <p class="muted">Last updated: 27 October 2026</p>
+
+  <p>Senv is an end-to-end encrypted messenger. This policy explains what we collect, why, who else sees it, and what you can ask us to do. We wrote it to be read.</p>
+
+  <h2>Who we are</h2>
+  <p>Senv is provided by Paper Street Soap SRL (Italy), the data controller. Contact: <a href="mailto:lorenzo.demaio@pss.design">lorenzo.demaio@pss.design</a>.</p>
+
+  <h2>The short version</h2>
+  <ul>
+    <li>We cannot read your messages, voice notes, reactions, receipts or conversation topics. They are end-to-end encrypted on your device.</li>
+    <li>We do not sell your data, show ads, or track you across other companies' apps and websites.</li>
+    <li>We do not upload your contacts.</li>
+    <li>The one exception to the first point is when you choose to chat with a remote agent, described below.</li>
+  </ul>
+
+  <h2>What we collect</h2>
+  <ul>
+    <li><strong>Phone number.</strong> You verify it once, by a one-time code sent by SMS. We do not store the number. We store a keyed one-way hash of it that ties it to your handle, so a new phone or a reinstall gets the same handle back and nobody else can take it. The number passes through our server's memory and our SMS provider (Twilio) while the code is checked.</li>
+    <li><strong>Handle and display name.</strong> The name you choose is stored in our directory so people can find and recognise you. Your handle is what other people see; your phone number is not.</li>
+    <li><strong>Device keys.</strong> Public cryptographic keys for your device, so others can start encrypted chats with you. Private keys never leave your iPhone.</li>
+    <li><strong>Encrypted messages in transit.</strong> To deliver a message to a recipient who is offline, our server temporarily holds an encrypted envelope. It cannot read it, and it is deleted once the recipient's device acknowledges it, or after 30 days at most. Encrypted voice notes and other media are stored the same way (up to 30 days).</li>
+    <li><strong>Notification token.</strong> If you allow notifications, Apple's push token for your device, used only to wake the app to fetch new messages. Push payloads contain no message content.</li>
+    <li><strong>Technical logs.</strong> Our servers log requests (for example time, status and a shortened device identifier) for security and debugging. Logs never contain message content or full phone numbers.</li>
+  </ul>
+
+  <h2>What stays on your iPhone</h2>
+  <p>Your conversations, contacts and keys are stored in an encrypted database on your device. The encryption key is kept in the iOS Keychain. Voice notes are transcribed on your iPhone using Apple's on-device speech recognition. Senv Assistant uses Apple's on-device model, so those conversations never leave your phone.</p>
+
+  <h2>Chatting with a remote agent (optional)</h2>
+  <p>If you start a chat with Senv Agent, what you type in that conversation, and what the agent sees while it works (for example web pages), is sent to our agent service and cannot be end-to-end encrypted, because the agent has to read it. It is processed by our infrastructure and by service providers we use to run it: an AI model provider and a cloud sandbox provider. Each agent conversation gets its own isolated workspace, which is deleted when you delete the conversation. Do not share secrets such as passwords with an agent. This is the only part of Senv where we, and those providers, can read what you send.</p>
+
+  <h2>Who we share data with</h2>
+  <ul>
+    <li><strong>Twilio</strong>, to send and check the SMS verification code.</li>
+    <li><strong>Amazon Web Services</strong>, which hosts our servers.</li>
+    <li><strong>Apple</strong>, to deliver push notifications.</li>
+    <li><strong>An AI model provider and a sandbox provider</strong>, only if you use Senv Agent.</li>
+  </ul>
+  <p>We do not sell personal data. We may disclose data if the law requires it, but we can only hand over what we have: public keys, handle, display name, a hashed phone number and any encrypted envelopes not yet delivered.</p>
+
+  <h2>How long we keep it</h2>
+  <ul>
+    <li>Encrypted messages and media in transit: until delivered, 30 days at most.</li>
+    <li>Handle, display name, device keys and hashed phone number: until you delete your account.</li>
+    <li>Agent conversations: until you delete them.</li>
+    <li>Server logs: kept for a short period for security and debugging.</li>
+  </ul>
+
+  <h2>Your choices and rights</h2>
+  <p>You can ask us to access, correct, export or delete the personal data we hold about you, to restrict or object to its processing, and to withdraw consent where we rely on it. To delete your account and the data tied to your handle, email us from the address you can reach us at and tell us your handle. If you are in the EU or the UK you can also complain to your data protection authority (in Italy, the Garante per la protezione dei dati personali).</p>
+
+  <h2>Legal basis (EU/UK)</h2>
+  <p>We process your data to provide the service you asked for (contract), to keep it secure and prevent abuse (legitimate interests), and for optional features such as notifications and remote agents (your consent, which you can withdraw).</p>
+
+  <h2>Children</h2>
+  <p>Senv is not directed at children under 16, and we do not knowingly collect their data. If you think a child has signed up, tell us and we will delete the account.</p>
+
+  <h2>International transfers</h2>
+  <p>Our servers run on AWS in the European Union. Some providers (for example Twilio and the agent providers) may process data outside the EU under standard contractual clauses or equivalent safeguards.</p>
+
+  <h2>Changes</h2>
+  <p>If we change this policy in a way that matters, we will update the date above and tell you in the app.</p>
+
+  <footer>
+    <a href="/">Home</a>
+    <a href="mailto:lorenzo.demaio@pss.design">Contact</a>
+    <p>&copy; 2026 Paper Street Soap SRL</p>
+  </footer>
+</main>
+</body>
+</html>
